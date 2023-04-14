@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/admin-style.css" />
+    <script
+      src="https://kit.fontawesome.com/eabac940d1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="posts()">
+    <nav>
+      <div class="logo">myBlog</div>
+      <div class="nav-items">
+        <ul>
+          <!-- <li><a href=""> Home</a></li>
+          <li><a href="">Dashboard</a></li> -->
+          <li>
+            <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="controls-container">
+        <p class="d-board-text">Dashboard</p>
+        <div class="controls">
+            <button onclick="posts()" id="posts-btn"><i class="fa-solid fa-newspaper"></i> Manage Posts</button>
+            <button onclick="user()" id="user-btn"><i class="fa-solid fa-user"></i> Manage Users</button>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div>
+                <h1><%=visits[0].visits%></h1>
+                <h2>Total Visits</h2>
+                </div>
+                <p><i class="fa-solid fa-eye"></i></p>
+            </div>
+            <div class="stat-box">
+                <div>
+                <h1><%=  posts.length %></h1>
+                <h2>Total Posts</h2>
+                </div>
+                <p><i class="fa-solid fa-newspaper"></i></p>
+            </div>
+            <div class="stat-box">
+                <div>
+                <h1><%=profiles.length-1 %></h1>
+                <h2>Total Users</h2>
+                </div>
+                <p><i class="fa-solid fa-user"></i></p>
+            </div>
+           
+        </div>
+
+        <div class="posts-container" id="posts">
+            <h1>Recent Articles</h1>
+            <div class="posts" id="style-2">
+                <table>
+                    <tr>
+                        <th>No</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                    <% var i=0 %>
+                     <% posts.reverse().forEach((posts)=>{ %>
+                    <tr>
+                        <td><%= ++i %></td>
+                        <td><a href="/thumbnails/<%=posts.thumbnail%>"><img src="/thumbnails/<%=posts.thumbnail %>" alt="" onerror="this.onerror=null; this.src='images/default-image.png'"></a></td>
+                        <td><a href="/posts/<%=posts._id%>"class="author-name"><p><%= posts.title %></p></a></td>
+                        <td><a href="/profile/<%=posts.author %>" class="author-name"><%= posts.author %></a></td>
+                        <td><a href="/update/<%=posts._id%>" class="edit-tbn">Edit</a></td>
+                        <td><a href="/delete/<%=posts._id%>" class="delete-btn">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    
+                    
+                </table>
+            </div>
+        </div>
+        
+
+        <div class="user-container"  id="user">
+          <h1>Users</h1>
+          <div class="users" id="style-2">
+
+            <% profiles.forEach((profiles)=>{ %>
+              <%if(profiles.type!="admin") {%>
+              <div class="user">
+              <a href="/profile/<%=profiles.username %>" class="profile-link">
+              <div class="image-container">
+                <div>
+                <img src="/thumbnails/<%=profiles.dp%>" alt="" onerror="this.onerror=null; this.src='images/user-icon.png'">
+              </div>
+              </div>
+              <div class="username">
+              <h1><%= profiles.fullname %></h1>
+              <p><a href="/removeuser/<%=profiles._id%>?user=<%=profiles.username%>"><i class="fa-solid fa-trash"></i></a></p>
+              </div>
+            </a>
+            </div>
+            <% } }) %>
+
+            
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function user(){
+        document.getElementById("posts").style.display="none";
+        document.getElementById("user").style.display="block";
+        document.getElementById("user-btn").style.backgroundColor="var(--uiclr)";
+        document.getElementById("posts-btn").style.backgroundColor="";
+        document.getElementById("user-btn").classList.add("selected");
+        document.getElementById("posts-btn").classList.remove("selected");
+
+        
+        
+      }
+      function posts(){
+         document.getElementById("user").style.display="none";
+        document.getElementById("posts").style.display="block";
+        document.getElementById("posts-btn").style.backgroundColor="var(--uiclr)";
+        document.getElementById("user-btn").style.backgroundColor="";
+        document.getElementById("posts-btn").classList.add("selected");
+        document.getElementById("user-btn").classList.remove("selected");
+
+      }
+    </script>
+  </body>
+</html>

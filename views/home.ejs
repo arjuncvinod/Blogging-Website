@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css">
+    <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <nav>
+        <div class="logo"><a href="/home">myBlog</a></div>
+        <div class="search" >
+            <form action="">
+            <input type="text" onkeyup="sendData(this)" id="search" placeholder="Search articles">
+            <button type="reset" class="reset-btn"  id="reset-btn" onclick="sendData(this)"><i class="fa-solid fa-xmark"></i> </button>
+            </form>
+            <div class="results" id="searchDiv">
+
+        </div>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li> <a href="/home"> Home</a></li>
+                <% if(user==="admin"){ %>
+                <li> <a href="/admin">Dashboard</a></li>
+                <% }else{%>
+                    <li> <a href="/profile/<%=user %>"> My profile</a></li>
+                    <% }%>
+                <li> <a href="/logout"> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="pop-posts-container">
+            <h1>Popular Articles <a href="/compose"><button><i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose</button></a> </h1>
+            
+            
+            <div class="pop-posts">
+                <!-- <marquee behavior="alternate" direction="" onmouseover="this.stop();" onmouseout="this.start();"> -->
+                <% if(sposts){ %>
+                <% sposts.forEach((sposts)=>{ %>
+
+                <div class="post-box">
+                   <img src="thumbnails/<%= sposts.thumbnail %>" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
+                   <div class="middle">
+                    <a href="/posts/<%= sposts._id %>" >Read More</a>
+                  </div>
+                   <h2><%= sposts.title %></h2>
+                   <p><%= sposts.content %></p>
+                </div>
+                <% })} %>
+                 
+            <!-- </marquee> -->
+            </div>
+        </div>
+
+        <div class="recent-posts-container">
+            <h1>Recent Articles</h1>
+            <div class="recent-posts">
+                 <% posts.reverse().forEach((posts)=>{ %>
+                    <div class="recent-post-box">
+                    <a href="/posts/<%= posts._id %>" class="link-card">
+                    <div class="img-container">
+                        <div>
+                        <img src="thumbnails/<%= posts.thumbnail %>" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
+                    </div>
+                    </div>
+                    <% var days=Math.round((date-posts.date)/86400000)
+                    if(days===0){
+                       days=Math.round((date-posts.date)/3600000)
+                       if(days===0){
+                        days=Math.round((date-posts.date)/60000)
+                        if(days===0){
+                            days="Justnow"
+                        }else if(days===1){
+                            days="1 minute ago"
+                        }else{
+                            days=days+" minutes ago"
+                        }
+                       }else if(days===1){
+                        days="1 hour ago"
+                       }else{
+                        days=days+" hours ago"
+                       }
+                    }
+                    else if(days===1){
+                        days="1 day ago"
+                    }
+                    else{
+                        days=days+" days ago"
+                    } %>
+                    <p class="days"><%= days %></p>
+                    <h2 title="<%= posts.title %>"><%= posts.title %></h2>
+                    <p class="post-desc">
+                        <%= posts.content %>
+                    </p>
+                    <div class="post-footer">
+                        <p><%= posts.author %></p>
+                       <button >ReadMore</button>
+                    </div>
+                </a>
+                </div>
+                <% }) %>
+            </div>
+            
+        </div>
+    </main>
+    <script>
+function sendData(e){
+    const searchResults = document.getElementById("searchDiv");
+        if(e.value.length!=0){
+            document.getElementById("reset-btn").style.display="block"
+        }else{
+            document.getElementById("reset-btn").style.display="none"
+        }
+        
+        let match = e.value.match(/^[a-z A-Z]*/)
+        let match2 = e.value.match(/\s*/)
+        if(match2[0] === e.value){
+            searchResults.innerHTML ='';
+            return
+        }
+        if(match[0] === e.value){
+        fetch('search',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({payload: e.value})
+        }).then(res=> res.json()).then(data => {
+            let payload =data.payload;
+            searchResults.innerHTML = '';
+            if(payload.length < 1){
+                searchResults.innerHTML = '<p>Sorry nothing found.</p>';
+                return
+            }
+            payload.forEach((PosT,index)=>{
+                if(index > 0) searchResults.innerHTML +='';
+                searchResults.innerHTML += `<p><a href="/posts/${PosT._id}" onmouseover="suggest(this)" id="data">${PosT.title}</a></p>`
+            })
+        })
+        return
+        }
+        searchResults.innerHTML = '';
+        }
+        function suggest(e){
+           document.getElementById("search").value=e.innerHTML
+        }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+:root {
+  --uiclr: #009d84;
+  --white: #e4e9fd;
+  --black: #040c0e;
+  --light-black: rgb(53, 50, 50);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+body{
+  background-color: rgba(128, 128, 128, 0.321);
+}
+nav {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 10%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--uiclr);
+  margin-left: 10px;
+}
+.nav-items {
+  width: 30%;
+}
+.nav-items ul {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.nav-items ul li {
+  list-style: none;
+}
+.nav-items ul li a {
+  text-decoration: none;
+  color: var(--uiclr);
+  font-size: 1.08rem;
+}
+/* ------------------------------------------------------------- */
+main{
+  display: flex;
+  overflow: hidden;
+}
+.profile-container{
+  height:90vh;
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+}
+.posts-container{
+  height:90vh;
+  /* background-color: aquamarine; */
+  width:80%;
+}
+/* ------------------------------------------------------------------ */
+
+.profile-info-container{
+  height: 65%;
+  background-color:rgba(0, 157, 131,.8);
+  border-bottom-left-radius:20px ;
+  border-bottom-right-radius: 20px;
+}
+.dp{
+  height: 40%;
+  display: flex;
+  justify-content:center ;
+  align-items: end;
+}
+.dp img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom:5% ;
+  object-fit: cover;
+  transition: .8s;
+}
+.dp:focus img{
+  scale:2;
+}
+
+.about{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+}
+.username{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.bio{ 
+  text-align: center;
+  color: rgb(247, 242, 242);
+  font-size: .9rem;
+  width: 90%;
+}
+.web-link a{
+  text-decoration: none;
+  color: white;
+}
+hr{
+  margin: 20px 30px;
+}
+.stats{
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.stats div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+.stats div p{
+  margin: 6%;
+}
+.contact-container{
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7%;
+}
+.contact-container h1{
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 5%;
+  color: var(--uiclr);
+}
+.mail-phone{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  width: 100%;
+}
+.mail-phone p{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  font-size: .7rem;
+  color:gray;
+  transition: .5s;
+}
+.mail-phone p:hover{
+  color: black;
+  scale: 1.2;
+}
+.mail-phone p:hover i{
+  scale: .7;
+}
+.mail-phone p i{
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--uiclr);
+  transition: .5s;
+}
+.mail-phone p a{
+  text-decoration: none;
+  color:gray
+}
+.mail-phone p:hover a{
+  color:black;
+}
+.socials{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+.socials a{
+  text-decoration: none;
+  color: var(--uiclr);
+  font-size: 1.5rem;
+  margin: 5px 0;
+  transition: .2s;
+}
+.socials a:hover{
+  scale: 1.6;
+}
+.socials a:nth-child(1):hover{
+  color: #3b5998;
+}
+.socials a:nth-child(2):hover{
+  color: #d62976;
+}
+.socials a:nth-child(3):hover{
+  color: #00acee;
+}
+.socials a:nth-child(4):hover{
+  color:#4FCE5D;
+}
+.edit-profile-container{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  padding: 20px 0;
+}
+.edit-profile-container a{
+ text-decoration: none;
+ color: white;
+ background-color: var(--uiclr);
+ padding: 10px 30px;
+ border-radius: 5px;
+}
+.edit-profile-container a:hover{
+background-color:#008670 ;
+}
+
+.recent-posts{
+  background-color: transparent;
+}
+.recent-posts{
+  width: 100%;
+  gap: 5%;
+}
+.posts-container{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.recent-posts-container{
+  display: flex;
+  justify-content: center;
+}
+.recent-post-box{
+  margin-bottom: -40px;
+}
+.post-footer p i{
+  color: red;
+}

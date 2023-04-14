@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css">
+    <link rel="stylesheet" href="css/compose-style.css">
+    
+</head>
+<body>
+     <nav>
+        <div class="logo"><a href="/home">myBlog</a></div>
+        <div class="nav-items">
+            <ul>
+                <li> <a href="/home"> Home</a></li>
+                <% if(user==="admin"){ %>
+                <li> <a href="/admin">Dashboard</a></li>
+                <% }else{%>
+                    <li> <a href="/profile/<%=user %>"> My profile</a></li>
+                    <% }%>
+                <li> <a href="/logout"> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="comp-title-container">
+            <h1 class="title">Create New Post</h1>
+        </div>
+        <div class="post-textarea">
+            <form action="/compose" method="post" enctype="multipart/form-data">
+            <p class="post-title">
+                <input type="text" placeholder="Title" name="postTitle">
+            </p>
+            <p class="post-content">
+                <textarea cols="30" rows="20" name="postBody"></textarea>
+            </p>
+                <input type="file" class="custom-file-input" name="image">
+            </p>
+            <p class="submit-button">
+                <input type="submit" value="Publish">
+                <input type="reset" value="Discard">
+            </p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

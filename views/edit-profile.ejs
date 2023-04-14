@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/edit-profile-style.css">
+</head>
+<body>
+    <main>
+        <div class="edit-container">
+            <h1>Edit profile</h1>
+            <form action="" method="post" class="forms-container" enctype="multipart/form-data">
+                <div>
+                    <label for="">Username</label>
+                    <input type="text" readonly value="<%=username%>">
+                    <label for="">Full Name</label>
+                    <input type="text" name="fullname" value="<%=userdata.fullname%>">
+                    <label for="">E-mail</label>
+                    <input type="text" readonly value="<%=email%>">
+                    <label for="">Bio</label>
+                    <textarea id="" cols="30" rows="10" name="bio"><%=userdata.bio%></textarea>
+                    <label for="">Profile Picture</label>
+                    <input type="file" class="custom-file-input" name="image">
+                 </div>
+
+                <div>
+                    <label for="">Website Link</label>
+                    <input type="text" name="weblink"  value="<%=userdata.weblink%>">
+                    <label for="">Facbook Profile </label>
+                    <input type="text" name="fb"  value="<%=userdata.facebook%>">
+                    <label for="">Instagram Profile</label>
+                    <input type="text" name="insta" value="<%=userdata.instagram%>">
+                    <label for="">Twitter Profile</label>
+                    <input type="text" name="tw" value="<%=userdata.twitter%>">
+                    <label for="">Whatsapp Number</label>
+                    <input type="text" name="wa" value="<%=userdata.whatsapp%>">
+                    <label for="">Phone Number</label>
+                    <input type="text" name="phno" value="<%=userdata.phoneno%>">
+                    <div class="buttons">
+                        <input type="reset" value="Discard">
+                        <input type="submit" value="save">
+                    </div>
+                </div>
+        </form>
+        </div>
+    </main>
+    
+</body>
+</html>

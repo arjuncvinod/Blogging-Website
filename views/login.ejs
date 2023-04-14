@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+            <div class="login-col1">
+                <h1>myBlog</h1>
+                <img src="images/blog-vector-art.png" alt="">
+            </div>
+            <div class="login-col2">
+                <div id="register">
+                <p class="s-text">Already have an account ?
+                    <button class="s-btn" onclick="login()">Sign in</button>
+                </p>
+                <div class="reg-section">
+                    <h1>
+                        Welcome to myBlog!
+                    </h1>
+                    <h2>
+                        Register your account
+                    </h2>
+                </div>
+                <div class="form-container">
+                    <form action="/signup" method="post">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                        <label>Password</label>
+                        <input type="password" name="password" required>
+                        <input type="submit" value="Register" class="lg-btn">
+
+                    </form>
+                </div>
+                </div>
+
+
+
+                <div id="login">
+                <p class="s-text">Don't have an account ?
+                    <button class="s-btn" onclick="register()">Sign Up</button>
+                </p>
+                <div class="reg-section ">
+                    <h1>
+                        Welcome to myBlog!
+                    </h1>
+                    <h2>
+                        Login to your account
+                    </h2>
+                </div>
+                <div class="form-container login-form">
+                    <form action="/login" method="post">
+                        <!-- <label>Name</label>
+                        <input type="text" > -->
+                        <label>Email</label>
+                        <input type="email" name="email" value="arjuncvinod7@gmail.com" required>
+                        <label>Password</label>
+                        <input type="password" name="password" value="1234" required>
+                        <input type="submit" value="Login" class="lg-btn">
+
+                    </form>
+                </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </main>
+    <script>
+        function login(){
+            document.getElementById("register").style.display="none"
+             document.getElementById("login").style.display=""
+
+        }
+        function register(){
+            document.getElementById("register").style.display=""
+            document.getElementById("login").style.display="none"
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+:root {
+  --uiclr: #009d84;
+  --white: #e4e9fd;
+  --black: #040c0e;
+  --light-black: rgb(53, 50, 50);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3% 0;
+}
+.main-section {
+  width: 70%;
+  padding: 0 5%;
+  height: 88vh;
+  overflow-y: scroll;
+}
+.related-posts-section {
+  width: 30%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: scroll;
+  padding: 10px ;
+}
+.image-section {
+  width: 100%;
+  height: 60vh;
+}
+.image-section img {
+  width: 100%;
+  height: 100%;
+  
+  object-fit:cover;
+}
+.heading-section {
+  margin: 3% 0;
+}
+.heading-section h1 {
+  font-size: 3rem;
+  color: var(--black);
+}
+.date-time-section {
+  color: var(--uiclr);
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.date-time-section span{
+  color:var(--light-black);
+}
+
+.date-time-section div {
+  display: flex;
+  justify-content: space-between;
+}
+.date-time-section div a {
+  color: var(--black);
+  margin: 10px;
+}
+.date-time-section div .username-text{
+  color: var(--uiclr);
+  text-decoration: none;
+}
+.like-button {
+  margin-top: 2%;
+  color: var(--black);
+  font-size: 1.3rem;
+}
+.like-button button {
+  margin-right: 5px;
+  border: none;
+  font-size: 1.3rem;
+  /* color: white; */
+  text-shadow: 0px 0px 1px black;
+  background-color: transparent;
+  transition: .15s;
+}
+.like-button button:active{
+  scale: 1.2;
+}
+.content-section {
+  margin: 3% 0;
+  line-height: 30px;
+  text-justify: distribute-all-lines;
+  width:100% ;
+  overflow-x: hidden;
+}
+/* .like-button button:focus {
+  text-shadow: 0px 0px 0px;
+  color: red;
+} */
+.white{
+  color: white;
+}
+.red{
+  text-shadow: 0px 0px 0px;
+  color: red;
+}
+.related-card {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  box-shadow: 0px 0px 5px rgb(204, 200, 200);
+  height: 13%;
+  padding: 1%;
+  align-items: center;
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--black);
+}
+.related-card:hover{
+  box-shadow: 0px 0px 10px rgb(204, 200, 200);
+}
+.related-card img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.related-card h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 60%;
+  
+}
+.related-card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100%;
+  width: 60%;
+}
+.related-card div p {
+    margin-bottom: 3%;
+    font-weight: bold;
+    color: var(--uiclr);
+    font-size: 0.9rem;
+}

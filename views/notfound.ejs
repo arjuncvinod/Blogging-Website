@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    body{
+        display:flex;
+        justify-content:center;
+        align-items: center ;
+        height: 100vh;
+
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        padding: 0 10% ;
+        gap: 40px;
+    }
+    .main-text{
+        width: 50%;
+        text-align: start;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .main-text h3{
+        font-size: 15px;
+        color:#ABB0B3;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+     .main-text h1{
+        font-size: 57px;
+        color:#121212;
+        font-weight: bold;
+        margin-top: 12px;
+     }
+
+     .main-text h2{
+        font-size: 33px;
+        color: #121212;
+        font-weight: 400; 
+        margin-bottom:40px;
+        line-height: 48px;
+    
+
+     }
+     .main-text a{
+        padding: 10px 20px;
+        background: linear-gradient(90deg,#fef506,#ff6575,#ae4df9,#029aff);
+        background-size: 500%;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        animation: color 5s infinite alternate;
+
+     }
+     @keyframes color {
+        0%{
+            background-position: left;
+        }
+        100%{
+            background-position: right;
+        }
+        
+     }
+     .main-text a:hover{
+        animation: color 1s infinite alternate;
+     }
+    .main-image{
+        display: flex;
+        justify-content: center;
+        width:50%;
+        /* animation: move 10s infinite linear; */
+        background-color: transparent;
+
+    }
+    @keyframes move 
+    {
+     0%{
+        transform: translateY(-10px);
+     }   
+     25%{
+        transform: translateX(10px);
+     }
+     50%{
+        transform: translateY(10px);
+     }
+     75%{
+        transform: translateX(-10px);
+     }
+     100%{
+        transform: translateY(-10px);
+     }
+    }
+    .main-image img{
+        width: 720px;
+         animation: move 10s infinite linear;
+    }
+
+</style>
+<body>
+    <main>
+        <div class="main-text">
+            <h3>ERROR CODE: 404</h3>
+            <h1>OOOPS!!</h1>
+            <h2>The page you are looking for may have been moved, deleted, or possibly never existed.</h2>
+            <a href="/home">Go Home</a>
+        </div>
+        <div class="main-image">
+            <img src="/images/404.png" alt="">
+        </div>
+    </main>
+</body>
+</html>

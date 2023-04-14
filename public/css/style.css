@@ -1,0 +1,145 @@
+
+:root{
+    --uiclr:#009D84;
+    --white: #E4E9FD;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial;
+
+}
+body{
+    background-image:url(images/bg.jpeg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container{
+    width:70vw;
+    height: 80vh;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(225, 221, 221);
+    border-radius: 5px;
+    display: flex;
+}
+.login-col1{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    background-color:rgba(0, 157, 132,0.1);
+    align-items: center;
+}
+.login-col1 h1{
+    width: 100%;
+    text-align:left;
+    margin-left: 30px;
+    padding-top: 10px;
+    color: var(--uiclr);
+}
+
+.login-col1 img{
+    width: 100%;
+}
+.login-col2{
+    width: 50%;
+    height: 100%;
+    padding-left: 10%;
+    overflow: hidden;
+}
+.s-text{
+    display: flex;
+    justify-content: end;
+    margin: 4%;
+    font-size: .8rem;
+    font-weight: bold;
+    align-items: center;
+    color:  rgb(179, 173, 173);
+}
+.s-btn{
+    padding: 1% 3%;
+    border-radius: 50px;
+    border: 1px solid rgb(135, 134, 134);
+    outline: none;
+    margin-left: 2%;
+    background-color: transparent;
+    color:  rgb(113, 111, 111);
+    font-weight: bold;
+    font-size: .8rem;
+    transition: 0.15s;
+    cursor: pointer;
+}
+.s-btn:hover{
+    border: 1px solid var(--uiclr);
+     color:var(--uiclr)
+}
+#register{
+    margin-bottom: 6%;
+    transition: 1s;
+}
+.reg-section h1{
+    color: rgb(54, 53, 53);
+    font-size: 2rem;
+    margin-top: 10%;
+}
+.reg-section h2{
+    color: rgb(135, 131, 131);
+    font-size: 1rem;
+    margin-top:2%;
+    margin-bottom: 6%;
+}
+.form-container{
+    padding-right: 10%;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+}
+.form-container form input{
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    border: 2px solid rgb(204, 200, 200);
+    padding: 0 10px;
+
+}
+.form-container form input:focus{
+    outline: none;
+    border: 2px solid var(--uiclr);
+}
+.form-container form label{
+    margin-bottom: 2%;
+    color: rgb(76, 76, 76);
+}
+.form-container form .lg-btn{
+    width: 40%;
+    height: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border:none;
+    border-radius: 25px;
+    background-color: var(--uiclr);
+    color: white;
+    margin-top: 2%;
+    transition: 0.15s;
+    cursor: pointer;
+    box-shadow: 1px 3px 10px rgb(178, 176, 176);
+}
+.form-container form .lg-btn:hover{
+     background-color: #017763
+}
+#login{
+    transition: 1s;
+}
+.login-form form label{
+    margin-top: 2%;
+}
+.login-form form .lg-btn{
+margin-top: 7%;
+}

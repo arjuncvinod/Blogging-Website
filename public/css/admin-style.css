@@ -1,0 +1,344 @@
+:root {
+  --uiclr: #009d84;
+  --white: #e4e9fd;
+  --black: #040c0e;
+  --light-black: rgb(53, 50, 50);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+nav {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 10%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--uiclr);
+  margin-left: 10px;
+}
+.nav-items {
+  width: 30%;
+}
+.nav-items ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.nav-items ul li {
+  list-style: none;
+  width: 90%;
+  display: flex;
+  justify-content: end;
+}
+.nav-items ul li a {
+  text-decoration: none;
+  color: var(--uiclr);
+  font-size: 1.08rem;
+  text-align: end;
+}
+/* ------------------------------------------------------------- */
+body {
+  background-color: rgba(128, 128, 128, 0.114);
+  height: 100vh;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  height: 86%;
+  justify-content: space-around;
+}
+.controls-container {
+  margin-top: 2%;
+  height: 100%;
+  background-color: white;
+  width: 20%;
+  border-radius: 8px;
+}
+.content-container {
+  border-radius: 8px;
+  margin-top: 2%;
+  height: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  width: 75%;
+}
+.d-board-text {
+  background-color: var(--uiclr);
+  padding: 10px;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 8px;
+}
+.controls {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 10px;
+  background-color: #ccebe6;
+  border-radius: 8px;
+}
+.controls button {
+  padding: 10px;
+  background-color: #ccebe6;
+  font-size: 1rem;
+  border: none;
+  text-align: start;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.controls button:hover {
+  background-color: var(--uiclr);
+  color: white;
+}
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 3%;
+}
+.stat-box {
+  width: 300px;
+  height: 120px;
+  background-color: #dc3745;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  color: white;
+  box-shadow: 0px 5px 10px rgb(198, 194, 194);
+}
+.stat-box:nth-child(2) {
+  background-color: var(--uiclr);
+}
+.stat-box:nth-child(3) {
+  background-color: #0a67c4;
+}
+.stat-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.stat-box div h1 {
+  margin-bottom: 5px;
+}
+.stat-box p {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.posts-container {
+  width: 100%;
+  background-color: white;
+  height: 74%;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+.posts-container h1 {
+  margin: 5px 20px;
+}
+.posts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  height: 88%;
+  overflow-y: scroll;
+}
+table {
+  text-align: center;
+  width: 95%;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border-collapse: collapse;
+  border-color: rgb(255, 0, 0);
+  border: none;
+  
+}
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+td:hover{
+  background-color:rgba(0, 157, 131, 0.1);
+  cursor: pointer;
+}
+td,
+th {
+  border-right: 1px solid rgb(216, 213, 213);
+  /* border-bottom: 1px solid rgb(216, 213, 213); */
+}
+td{
+padding: 10px;
+}
+td:last-child,
+th:last-child {
+  border-right: none;
+  /* border-bottom: 2px solid rgb(216, 213, 213); */
+}
+td img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+}
+th {
+  height: 40px;
+  background-color: var(--uiclr);
+  color: white;
+}
+th:first-child{
+  border-top-left-radius: 8px;
+}
+th:last-child{
+  border-top-right-radius: 8px;
+}
+td p {
+  text-align: start;
+  margin: 0 5px;
+}
+td a {
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+}
+td a:hover {
+  opacity: 0.8;
+}
+.author-name{
+  color: black;
+  font-size: 1rem;
+  padding: 8px 15px;
+}
+.author-name:hover {
+  opacity: 1;
+  color:var(--uiclr)
+}
+.edit-tbn {
+  background-color: green;
+}
+.delete-btn {
+  background-color: red;
+}
+
+.user-container{
+  height: 70%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+   overflow-y: hidden;
+}
+.user-container h1{
+  margin-bottom: 5px;
+}
+.profile-link{
+  text-decoration: none;
+  color: var(--light-black);
+}
+.users{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:start;
+  gap: 19px;
+  overflow-y: scroll;
+  height: 90%;
+  padding-left: 5px;
+}
+
+.user {
+  height: 200px;
+  width: 200px;
+  background-color:white;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgb(215, 212, 212);
+}
+.image-container{
+  background: white;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  padding-top:2px;
+  overflow: hidden;
+}
+.image-container div{
+  
+  overflow: hidden;
+  height: 100%;
+  width: 98%;
+  border-radius: 8px;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: 1s;
+  
+}
+.image-container img:hover{
+  transition: 6s ease-in-out;
+}
+.image-container img:hover{
+  cursor:zoom-in;
+  scale: 2;
+  border-radius: 8px;
+} 
+.username{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 22%;
+}
+.username h1{
+  font-size: 1.2rem;
+  vertical-align: center  ;
+}
+.username p a{
+  position: relative;
+  text-decoration: none;
+  color: black;
+  top: -3px;
+
+}
+.username p a:hover{
+  color:red;
+}
+.selected{
+  background-color: var(--uiclr);
+  color: white;
+}
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color:var(--uiclr);
+}
+#style-2::-webkit-scrollbar {
+  display: none;
+}

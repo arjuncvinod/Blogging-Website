@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home-style.css">
+    <link rel="stylesheet" href="/css/profile-style.css" />
+    <script src="https://kit.fontawesome.com/eabac940d1.js"crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">myBlog</div>
+      <div class="nav-items">
+        <ul>
+          <li><a href="/home"> Home</a></li>
+          <% if(username==="admin"){ %>
+                <li> <a href="/admin">Dashboard</a></li>
+                <% }else{%>
+                    <li> <a href="/profile/<%=username %>"> My profile</a></li>
+                    <% }%>
+          <li><a href="/logout"> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="profile-container">
+        <div class="profile-info-container">
+          <div class="dp" tabindex="0">
+            <img src="/thumbnails/<%if(userdata.dp){%><%=userdata.dp%><% } %>" alt="" />
+          </div>
+          <div class="about">
+            <p class="username"><%if(userdata.fullname) %><%= userdata.fullname %></p>
+            <p class="bio">
+              <%= userdata.bio %>
+            </p>
+            <p class="web-link"><a href="http://<%=userdata.weblink %>"><i class="fa-solid fa-link"></i> <%=userdata.weblink %></a> </p>
+          </div>
+         <hr>
+          <div class="stats">
+           <div><p>Posts</p>  <p id="pdisplay"></p>  </div>
+           <div><p>Likes </p> <p id="ldisplay"></p></div>
+          </div>
+        </div>
+        <div class="contact-container">
+            <h1>Contacts</h1>
+            <div class="mail-phone">
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto: <%=userdata.email %>"><%=userdata.email %></a></p>
+                <p><i class="fa-solid fa-phone"></i> <%=userdata.phoneno %></p>
+            </div>
+            <div class="socials">
+                <a href="http://www.facebook.com/<%=userdata.facebook%>"><i class="fa-brands fa-facebook"></i></a>
+                <a href="http://www.instagram.com/<%=userdata.instagram%>"><i class="fa-brands fa-instagram"></i></a>
+                <a href="http://www.twitter.com/<%=userdata.twitter%>"><i class="fa-brands fa-twitter"></i></a>
+                <a href="http://wa.me/+91<%=userdata.whatsapp%>"><i class="fa-brands fa-whatsapp"></i></a>
+                
+            </div>
+            <% if(username===userdata.username){ %>
+            <div class="edit-profile-container">
+            <a href="/editprofile/<%= username %>"> <i class="fa-solid fa-pencil"></i> Edit Profile </a>
+            </div>
+            <% } %>
+        </div>
+      </div>
+      <div class="posts-container">
+        <div class="recent-posts-container">
+            <h1></h1>
+            <div class="recent-posts">
+                <% var likes=0 %>
+                 <% var postno=0 %>
+                 <% posts.reverse().forEach((posts)=>{  %>
+                    <div class="recent-post-box">
+                    <a href="/posts/<%= posts._id %>" class="link-card">
+                    <div class="img-container">
+                      <div>
+                        <img src="/thumbnails/<%= posts.thumbnail %>" alt="" onerror="this.onerror=null; this.src='/images/default-image.png'">
+                        </div>
+                    </div>
+                    <% var days=Math.round((date-posts.date)/86400000)
+                    if(days===0){
+                       days=Math.round((date-posts.date)/3600000)
+                       if(days===0){
+                        days=Math.round((date-posts.date)/60000)
+                        if(days===0){
+                            days="Justnow"
+                        }else if(days===1){
+                            days="1 minute ago"
+                        }else{
+                            days=days+" minutes ago"
+                        }
+                       }else if(days===1){
+                        days="1 hour ago"
+                       }else{
+                        days=days+" hours ago"
+                       }
+                    }
+                    else if(days===1){
+                        days="1 day ago"
+                    }
+                    else{
+                        days=days+" days ago"
+                    } %>
+                    <p class="days"><%= days %></p>
+                    <h2 title="<%= posts.title %>"><%= posts.title %></h2>
+                    <p class="post-desc">
+                        <%= posts.content %>
+                    </p>
+                    <div class="post-footer">
+                        <p> <%= posts.like %> <i class="fa-sharp fa-solid fa-heart"></i></p>
+                       <button>ReadMore</button>
+                    </div>
+                </a>
+                </div>
+               
+                <%likes=likes+posts.like %>
+                <%postno=postno+1 %>
+
+                <% }) %>
+               
+            </div> 
+            <div style="display: none;">
+            <p id="lcount"><%=likes%></p>
+            <p id="pcount"><%=postno%></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("ldisplay").innerHTML=document.getElementById("lcount").innerHTML;
+        document.getElementById("pdisplay").innerHTML=document.getElementById("pcount").innerHTML;
+    </script>
+  </body>
+</html>
