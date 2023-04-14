@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
-mongoose
-  .connect("mongodb+srv://arjuncvinod:Arjuncvinod@123@arjun.advry0c.mongodb.net/myblog")
-  .then(() => {
-    console.log("mongodb connected");
-  })
-  .catch(() => {
-    console.log("failed to connect to db");
-  });
+async function main() {
+  // mongoose.connect("mongod://localhost:27017/todolistDb", {
+  //   useNewUrlParser: true,
+  // });
+  await mongoose.connect(
+    "mongodb+srv://arjuncvinod:gdozFKJP7i12I87s@cluster0.yjxy0xp.mongodb.net/todoListDB",
+    { useNewUrlParser: true }
+  );
+}
+main();
 const postSchema = new mongoose.Schema({
     author: String,
     title: String,
@@ -16,6 +18,7 @@ const postSchema = new mongoose.Schema({
     like:Number,
     likedby:[String]
     });
+    
 
 const PosT = mongoose.model("post", postSchema);
 module.exports = PosT

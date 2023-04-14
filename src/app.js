@@ -7,6 +7,7 @@ const sessions = require("express-session");
 // const collection = require("./mongodb");
 const PosT = require("./postdb");
 const Profile = require("./profiledb");
+// const conn = require("./connection")
 let imagename
 const multer = require("multer");
 const { send, title } = require("process");
@@ -414,6 +415,6 @@ app.get("/:custom/:custom2",(req,res)=>{
   res.render("notfound")
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3000, () => {
   console.log("server started at port 3000");
 });
