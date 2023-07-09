@@ -2,9 +2,9 @@
 ### Languages Used:
 #### Front end : HTML CSS Ejs
 #### Backend : Node.js Express.js
-#### Database : MongoDB
-<br/>
-**Screenshots**:
+#### Database : MongoDB <br />
+
+ **Screenshots**:
 
 <h3 align="center"> Login section</h3>
 <img src="SH4.jpg">
