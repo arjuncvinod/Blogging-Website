@@ -16,4 +16,4 @@
 <img src="SH3.jpg">
 
 
-<h1 align="center"> Made with ❤️ by Arjun[https://arjuncvinod.github.io] </h1>
+<h1 align="center"> Made with ❤️ by ![Arjun],(https://arjuncvinod.github.io) </h1>
