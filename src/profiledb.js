@@ -8,6 +8,7 @@ async function main() {
     { useNewUrlParser: true }
     
   );
+  // mongoose.connect("mongodb://127.0.0.1:27017/myblog") for local Db
   console.log("profile connected");
 }
 main();
