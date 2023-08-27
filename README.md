@@ -19,4 +19,4 @@
 ![image](https://github.com/arjuncvinod/Blogging-Website/assets/68469520/4c9f0f3c-3ac7-43e9-9854-d671f237c795)
 
 <h3  align="center" > Don't forget to hit the :star: if you like this repo. </h3>
-<h1 align="center"> Made with ❤️ by <a href="arjuncvinod.github.io">Arjun</a> </h1>
+<h1 align="center"> Made with ❤️ by <a href="https://arjuncvinod.github.io">Arjun</a> </h1>
