@@ -5,6 +5,25 @@
 #### Backend : ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB)
 #### Database : ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) <br />
 ### Live Preview : [www.myblog.com](https://blogwebsite-1rl3.onrender.com/)
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Blogging-Website.git
+cd Blogging-Website
+```
+### Install dependencies
+```console 
+npm install
+```
+### Start
+```console
+node src/App.js
+```
+```sh
+The Website will be available at http://localhost:3000
+```
  **Screenshots**: 
 
 <h3 align="center"> Login section</h3>
